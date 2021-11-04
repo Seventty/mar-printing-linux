@@ -19,6 +19,11 @@ app.get("/getPrinters", (req, res) => {
     res.json({ printers: allPrinters() });
     console.log("Printers getted");
   });
+
+
+app.get("/hello", (req, res) => {
+    res.json({ message: "Hello from server!" });
+});
   
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);
