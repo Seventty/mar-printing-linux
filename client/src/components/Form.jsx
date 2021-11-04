@@ -38,6 +38,7 @@ const Form = _ => {
         .catch(err => {
             console.error(err);
         });
+        setForm(initialForm);
     };
 
     return (

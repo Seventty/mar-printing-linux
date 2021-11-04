@@ -12,7 +12,7 @@ app.use(cors({origin: 'http://localhost:3000', credentials: true,}));
 
 app.post('/print', function(req, res) {
     console.log("Printing: ", req.body);
-    printJob(req.body.textToPrint);
+    //printJob(req.body.textToPrint);
 });
 
 app.get("/getPrinters", (req, res) => {
