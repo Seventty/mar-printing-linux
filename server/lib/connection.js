@@ -8,5 +8,10 @@ function allPrinters(){
     return execSync(allPrintersCommand).toString().replace('\n', '');
 };
 
+function printJob(textToPrint){
+    const printCommand = `echo ${textToPrint} | netcat -c 192.168.0.5 9100`;
+    return execSync(printCommand).toString().replace('\n', '');
+}
 
-export { allPrinters }
+
+export { allPrinters, printJob }

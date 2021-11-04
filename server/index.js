@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { allPrinters } from './lib/connection.js';
+import { allPrinters, printJob } from './lib/connection.js';
 
 const PORT = process.env.PORT || 3001;
 
@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(cors({origin: 'http://localhost:3000', credentials: true,}));
 
 app.post('/print', function(req, res) {
-    console.log("Recibing post...");
-    console.log(req.body);
+    console.log("Printing: ", req.body);
+    printJob(req.body.textToPrint);
 });
 
 app.get("/getPrinters", (req, res) => {
